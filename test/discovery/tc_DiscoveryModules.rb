@@ -1,10 +1,10 @@
 require_relative "../test_helper"
 
-require 'discovery/modules/MSVirtualServerProbe'
-require 'discovery/modules/VMwareEsxVcProbe'
-require 'discovery/modules/VMwareServerProbe'
-require 'discovery/modules/MSScvmmProbe'
-require 'discovery/modules/WindowsProbe'
+require 'manageiq/network_discovery/modules/MSVirtualServerProbe'
+require 'manageiq/network_discovery/modules/VMwareEsxVcProbe'
+require 'manageiq/network_discovery/modules/VMwareServerProbe'
+require 'manageiq/network_discovery/modules/MSScvmmProbe'
+require 'manageiq/network_discovery/modules/WindowsProbe'
 
 require 'enumerator'
 require 'ostruct'
