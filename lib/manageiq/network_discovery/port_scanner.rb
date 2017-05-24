@@ -1,7 +1,7 @@
 require 'timeout'
 require 'socket'
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     class PortScanner
       def self.scanPortArray(ost, ports)

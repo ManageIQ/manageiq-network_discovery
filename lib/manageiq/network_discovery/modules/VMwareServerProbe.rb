@@ -4,7 +4,7 @@ require 'manageiq/network_discovery/port_scanner'
 #        902  - VMware Server console
 #        912  - VMware Server console
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     class VMwareServerProbe
       def self.probe(ost)

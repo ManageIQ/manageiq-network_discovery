@@ -1,6 +1,6 @@
 require 'manageiq/network_discovery/port_scanner'
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     class RedHatRhevmProbe
       def self.probe(ost)

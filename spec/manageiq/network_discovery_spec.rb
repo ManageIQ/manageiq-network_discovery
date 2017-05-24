@@ -1,5 +1,5 @@
-RSpec.describe Manageiq::NetworkDiscovery do
+RSpec.describe ManageIQ::NetworkDiscovery do
   it "has a version number" do
-    expect(Manageiq::NetworkDiscovery::VERSION).not_to be nil
+    expect(ManageIQ::NetworkDiscovery::VERSION).not_to be nil
   end
 end

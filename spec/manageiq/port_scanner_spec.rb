@@ -1,7 +1,7 @@
 require 'ostruct'
 require 'benchmark'
 
-RSpec.describe Manageiq::NetworkDiscovery::PortScanner do
+RSpec.describe ManageIQ::NetworkDiscovery::PortScanner do
   before(:each) do
     @ost = OpenStruct.new
     @ost.ipaddr = "192.168.252.2" # yoda (ESX)

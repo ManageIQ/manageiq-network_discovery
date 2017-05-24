@@ -8,7 +8,7 @@ require "manageiq/network_discovery/port_scanner"
 #
 #######################################################################
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
 	  #######################################################################
 	  #

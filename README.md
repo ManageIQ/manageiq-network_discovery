@@ -1,4 +1,4 @@
-# Manageiq::NetworkDiscovery
+# ManageIQ::NetworkDiscovery
 
 ## Installation
 

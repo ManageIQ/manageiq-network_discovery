@@ -5,7 +5,7 @@ require 'manageiq/network_discovery/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "manageiq-network_discovery"
-  spec.version       = Manageiq::NetworkDiscovery::VERSION
+  spec.version       = ManageIQ::NetworkDiscovery::VERSION
   spec.authors       = ["ManageIQ Developers"]
 
   spec.summary       = "ManageIQ Network Discovery"

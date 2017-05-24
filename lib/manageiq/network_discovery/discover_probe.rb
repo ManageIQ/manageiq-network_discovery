@@ -1,4 +1,4 @@
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     module DiscoverProbe
       MODDIR = File.join(File.dirname(__FILE__), "modules")

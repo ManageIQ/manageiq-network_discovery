@@ -6,7 +6,7 @@ require 'manageiq/network_discovery/port_scanner'
 #        445  - SMB (Server Message Block) over TCP/IP
 #        3389 - RDP
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     class WindowsProbe
       def self.probe(ost)

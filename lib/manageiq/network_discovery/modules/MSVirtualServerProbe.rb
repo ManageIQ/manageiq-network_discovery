@@ -3,7 +3,7 @@ require 'manageiq/network_discovery/port_scanner'
 # Ports:
 #        5900 - Microsoft Virtual Machine Remote Control Client
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     class MSVirtualServerProbe
       def self.probe(ost)

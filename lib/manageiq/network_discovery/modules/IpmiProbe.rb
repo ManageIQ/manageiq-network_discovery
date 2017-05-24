@@ -1,6 +1,6 @@
 require 'util/miq-ipmi'
 
-module Manageiq
+module ManageIQ
   module NetworkDiscovery
     class IpmiProbe
       def self.probe(ost)
