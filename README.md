@@ -1,5 +1,14 @@
 # ManageIQ::NetworkDiscovery
 
+[![Gem Version](https://badge.fury.io/rb/manageiq-network_discovery.svg)](http://badge.fury.io/rb/manageiq-network_discovery)
+[![Build Status](https://travis-ci.org/ManageIQ/manageiq-network_discovery.svg)](https://travis-ci.org/ManageIQ/manageiq-network_discovery)
+[![Code Climate](https://codeclimate.com/github/ManageIQ/manageiq-network_discovery.svg)](https://codeclimate.com/github/ManageIQ/manageiq-network_discovery)
+[![Test Coverage](https://codeclimate.com/github/ManageIQ/manageiq-network_discovery/badges/coverage.svg)](https://codeclimate.com/github/ManageIQ/manageiq-network_discovery/coverage)
+[![Dependency Status](https://gemnasium.com/ManageIQ/manageiq-network_discovery.svg)](https://gemnasium.com/ManageIQ/manageiq-network_discovery)
+[![Security](https://hakiri.io/github/ManageIQ/manageiq-network_discovery/master.svg)](https://hakiri.io/github/ManageIQ/manageiq-network_discovery/master)
+
+[![Chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ManageIQ/manageiq-network_discovery?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Installation
 
 Add this line to your application's Gemfile:
