@@ -4,7 +4,7 @@ if ENV['CI']
 end
 
 require "bundler/setup"
-require "manageiq/network_discovery"
+require "manageiq-network_discovery"
 
 # Initialize the global logger that might be expected
 require 'logger'
