@@ -8,7 +8,7 @@ module ManageIQ
           next unless File.fnmatch('?*Probe.rb', pmf)
           pmod = pmf.chomp(".rb")
           require_relative "modules/#{pmod}"
-          Object.const_get(pmod).probe(dobj)
+          ManageIQ::NetworkDiscovery.const_get(pmod).probe(dobj)
         end
         (nil)
       end
