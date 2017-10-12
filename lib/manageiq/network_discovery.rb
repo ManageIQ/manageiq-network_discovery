@@ -1,5 +1,4 @@
 require "manageiq/network_discovery/version"
-require "manageiq/network_discovery/discover_probe"
 require "manageiq/network_discovery/port_scanner"
 
 #######################################################################
@@ -70,6 +69,19 @@ module ManageIQ
 	  #
 	  #######################################################################
 
+    PROVIDERS_BY_TYPE = {
+      :ospinfra        => "ManageIQ::Providers::Openstack::InfraDiscovery",
+      # Following to be moved to ManageIQ::Providers or MiqIPMI or equivalent or Host/Helper
+      :ipmi            => "ManageIQ::NetworkDiscovery::IpmiProbe",
+      :scvmm           => "ManageIQ::NetworkDiscovery::MSScvmmProbe",
+      :msvirtualserver => "ManageIQ::NetworkDiscovery::MSVirtualServerProbe",
+      :rhevm           => "ManageIQ::NetworkDiscovery::RedHatRhevmProbe",
+      :virtualcenter   => "ManageIQ::NetworkDiscovery::VMwareEsxVcProbe",
+      :esx             => "ManageIQ::NetworkDiscovery::VMwareServerProbe",
+      :vmwareserver    => "ManageIQ::NetworkDiscovery::VMwareServerProbe",
+      :mswin           => "ManageIQ::NetworkDiscovery::WindowsProbe"
+    }
+
     def self.scanHost(sInfo)
       require 'net/ping'
       sInfo.os = []
@@ -79,11 +91,20 @@ module ManageIQ
       # and skip scanning if the ping fails.
       pingOk = true
       begin
-          pingOk = Net::Ping::External.new(sInfo.ipaddr).ping if sInfo.usePing
-        rescue Timeout::Error
-          pingOk = false
+        pingOk = Net::Ping::External.new(sInfo.ipaddr).ping if sInfo.usePing
+      rescue Timeout::Error
+        pingOk = false
+      end
+
+      if pingOk
+        # Trigger probes
+        sInfo.discover_types.each do |type|
+          klass = Object.const_get(PROVIDERS_BY_TYPE[type])
+          $log.info "#{klass}: probing ip = #{sInfo.ipaddr}" if $log
+          klass.send(:probe, sInfo)
+          $log.info "#{klass}: probe of ip = #{sInfo.ipaddr} complete" if $log
         end
-      DiscoverProbe.getProductMod(sInfo) if pingOk
+      end
     end
 
     private
@@ -110,4 +131,4 @@ module ManageIQ
     def heuristic3
     end
   end
-  end
+end

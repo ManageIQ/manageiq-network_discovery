@@ -18,13 +18,7 @@ module ManageIQ
       ]
 
       def self.probe(ost)
-        if !ost.discover_types.include?(:virtualcenter) && !ost.discover_types.include?(:esx)
-          $log.debug "Skipping VMwareEsxVcProbe" if $log
-          return
-        end
-
         # First check if we can access the VMware webservice before even trying the port scans.
-        $log.debug "VMwareEsxVcProbe: probing ip = #{ost.ipaddr}" if $log
         begin
           require 'VMwareWebService/MiqVimClientBase'
           MiqVimClientBase.new(ost.ipaddr, "test", "test")
@@ -67,8 +61,6 @@ module ManageIQ
             $log.debug "VMwareEsxVcProbe: ip = #{ost.ipaddr}, Machine is an ESX server." if $log
           end
         end
-
-        $log.debug "VMwareEsxVcProbe: probe of ip = #{ost.ipaddr} complete" if $log
       end
     end # class VMwareEsxVcProbe
   end
