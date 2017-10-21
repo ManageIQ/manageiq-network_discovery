@@ -4,14 +4,6 @@ module ManageIQ
   module NetworkDiscovery
     class RedHatRhevmProbe
       def self.probe(ost)
-        log_header = "RedHatRhevmProbe"
-        unless ost.discover_types.include?(:rhevm)
-          $log.debug "Skipping #{log_header}" if $log
-          return
-        end
-
-        $log.debug "#{log_header}: probing ip = #{ost.ipaddr}" if $log
-
         require 'ovirt'
         Ovirt.logger = $rhevm_log if $rhevm_log
 
@@ -20,7 +12,6 @@ module ManageIQ
             ost.hypervisor << :rhevm
           end
         end
-        $log.debug "#{log_header}: probe of ip = #{ost.ipaddr} complete" if $log
       end
     end
   end
