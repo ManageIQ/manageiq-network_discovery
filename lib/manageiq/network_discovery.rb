@@ -70,7 +70,7 @@ module ManageIQ
 	  #######################################################################
 
     PROVIDERS_BY_TYPE = {
-      :ospinfra        => "ManageIQ::Providers::Openstack::InfraDiscovery",
+      :openstack_infra => "ManageIQ::Providers::Openstack::InfraDiscovery",
       # Following to be moved to ManageIQ::Providers or MiqIPMI or equivalent or Host/Helper
       :ipmi            => "ManageIQ::NetworkDiscovery::IpmiProbe",
       :scvmm           => "ManageIQ::NetworkDiscovery::MSScvmmProbe",
@@ -99,6 +99,7 @@ module ManageIQ
       if pingOk
         # Trigger probes
         sInfo.discover_types.each do |type|
+          next unless PROVIDERS_BY_TYPE.include?(type)
           klass = Object.const_get(PROVIDERS_BY_TYPE[type])
           $log.info "#{klass}: probing ip = #{sInfo.ipaddr}" if $log
           klass.send(:probe, sInfo)
