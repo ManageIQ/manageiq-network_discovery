@@ -1,4 +1,4 @@
-# ManageIQ::NetworkDiscovery
+# ManageIQ::NetworkDiscovery - LEGACY - This repo is not used anymore. Please see https://github.com/ManageIQ/manageiq-network_discovery/issues/11#issuecomment-368597756 for more details.
 
 [![Gem Version](https://badge.fury.io/rb/manageiq-network_discovery.svg)](http://badge.fury.io/rb/manageiq-network_discovery)
 [![Build Status](https://travis-ci.org/ManageIQ/manageiq-network_discovery.svg)](https://travis-ci.org/ManageIQ/manageiq-network_discovery)
